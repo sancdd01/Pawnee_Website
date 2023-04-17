@@ -40,3 +40,12 @@ export const logOut = async (setNewUser) => {
   }
   return response.data.signout;
 };
+
+export const getQuote = async () => {
+  let response = await axios.get(
+    "http://ron-swanson-quotes.herokuapp.com/v2/quotes",
+    { headers: null }
+  );
+  console.log(response);
+  return response;
+};

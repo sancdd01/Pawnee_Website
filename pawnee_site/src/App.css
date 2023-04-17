@@ -1,5 +1,23 @@
-body {
+#hello_user {
+  background-color: red;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.nav-links {
   background-color: aqua;
+  width: 500px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
 }
 
 .container {
@@ -9,4 +27,22 @@ body {
 
 .signupform {
   border: 2px solid black;
+}
+
+#swanson-profile {
+  height: 180px;
+  width: 180px;
+  border-radius: 50rem;
+}
+
+.swanson-qoute {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.department-info {
+  display: flex;
+  flex-direction: row;
 }

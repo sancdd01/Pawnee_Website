@@ -3,6 +3,7 @@ import { createHashRouter, createBrowserRouter } from "react-router-dom";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
 import LogIn from "./pages/LogIn";
+import Department from "./pages/Department";
 
 const Router = createHashRouter([
   {
@@ -21,6 +22,10 @@ const Router = createHashRouter([
       {
         path: "/signin",
         element: <LogIn />,
+      },
+      {
+        path: "/department",
+        element: <Department />,
       },
     ],
   },
