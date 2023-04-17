@@ -1,0 +1,7 @@
+{
+  "python.formatting.provider": "none",
+  "git.ignoreLimitWarning": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  }
+}

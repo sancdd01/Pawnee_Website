@@ -1,0 +1,12 @@
+body {
+  background-color: aqua;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.signupform {
+  border: 2px solid black;
+}
