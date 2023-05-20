@@ -6,8 +6,7 @@ export default function LogIn() {
   const [password, setPassword] = useState("");
 
   return (
-    <div>
-      <h1>Log In</h1>
+    <div className="container">
       <form
         onSubmit={(e) => [
           e.preventDefault(),
@@ -16,6 +15,7 @@ export default function LogIn() {
           setPassword(""),
         ]}
       >
+        <h1 className="title">Log In</h1>
         <input
           placeholder="email"
           value={email}
@@ -27,7 +27,7 @@ export default function LogIn() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <input type="submit" value="logIn" />
+        <input type="submit" value="Log In" />
       </form>
     </div>
   );

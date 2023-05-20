@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 
+app_name = 'frontend'
+
 urlpatterns = [
     path('', views.send_the_index, name='index'),
     path('signup', views.user_sign_up, name="signup"),

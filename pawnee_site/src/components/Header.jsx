@@ -20,20 +20,31 @@ export default function Header() {
 
   return (
     <div className="nav">
-      <div className="nav-links">
-        <Navbar collapseOnSelect bg="dark" expand="lg">
-          <Container>
-            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <Container className="nav-links" id="contains">
+        <Navbar id="fix-nav" collapseOnSelect bg="dark" expand="lg">
+          <Navbar.Brand href="#home">
+            <img
+              src="/static/images/city_seal.png"
+              width="80"
+              height="80"
+              className="d-inline-block align-top"
+              alt="city-seal"
+            />
+          </Navbar.Brand>
+          <Navbar.Brand href="#home" id="brand">
+            CITY OF PAWNEE
+          </Navbar.Brand>
 
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="me-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#link">Link</Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
+          <Nav.Link href="/">Home </Nav.Link>
+          <Nav.Link href="#link">About </Nav.Link>
+          <Nav.Link href="#/signin">Media </Nav.Link>
+          <Nav.Link href="#/department">Department </Nav.Link>
+          <Nav.Link href="#/workorders">Work Orders </Nav.Link>
+          <Nav.Link href="#/signup">Sign Up</Nav.Link>
+          <Nav.Link href="#/signin">Log In</Nav.Link>
         </Navbar>
-      </div>
+      </Container>
+
       <div id="hello_user">
         <span>Hi {user && user.first_name} !</span>
         <button onClick={() => logOut(setNewUser)}>Log Out</button>

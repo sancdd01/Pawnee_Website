@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'rest_framework',
     "city_website",
+    "work_orders",
 ]
 
 MIDDLEWARE = [

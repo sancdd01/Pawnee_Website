@@ -49,3 +49,31 @@ export const getQuote = async () => {
   console.log(response);
   return response;
 };
+
+export const getTasks = async () => {
+  let response = await axios.get("/workorders/");
+  return response.data.work_orders;
+};
+
+export const createWorkOrder = async (title) => {
+  let response = await axios.post("/workorders/", {
+    title: title,
+  });
+  return response.data.work_orders;
+};
+
+// export const deleteWorkOrder = async (id) => {
+//   let response = await axios.delete(`/workorders/${id}`);
+//   return response.data.work_orders;
+// };
+
+export const deleteWorkOrder = (id) => {
+  axios
+    .delete(`http://127.0.0.1:8000/workorders/?id=${id}`)
+    .then((response) => {
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};

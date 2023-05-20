@@ -12,7 +12,6 @@ export default function SignUp() {
 
   return (
     <div>
-      <h1>Sign up</h1>
       <div className="container">
         <form
           action=""
@@ -26,6 +25,7 @@ export default function SignUp() {
             setDepartment(""),
           ]}
         >
+          <h1 className="title">Sign up</h1>
           <input
             type="text"
             value={firstName}
@@ -56,7 +56,7 @@ export default function SignUp() {
             placeholder="Department"
             onChange={(e) => setDepartment(e.target.value)}
           />
-          <input type="submit" value="signUp" />
+          <input type="submit" value="Create Account" />
         </form>
       </div>
     </div>
