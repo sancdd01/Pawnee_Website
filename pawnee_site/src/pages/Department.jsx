@@ -38,7 +38,7 @@ export default function Department() {
   return (
     <div className="department-pg">
       <div className="dept-img-div">
-        <img className="dept-img" src="/static/images/prdept.jpeg" alt="" />
+        <img className="dept-img" src="/images/prdept.jpeg" alt="" />
       </div>
       {/* This guy should be on the top */}
       <div className="swanson-quote">
@@ -46,7 +46,7 @@ export default function Department() {
           <img
             id="swanson-profile"
             // "https://i.kym-cdn.com/entries/icons/facebook/000/023/463/6360103332924270401274957217_Ron.jpg"
-            src="/static/images/swanson.png"
+            src="/images/swanson.png"
             alt="photo-swanson"
             onClick={handleClick}
           />

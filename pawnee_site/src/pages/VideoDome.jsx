@@ -41,10 +41,10 @@ const VideoDome = () => {
 
   return (
     <div className="video-page">
-      <img id="vd-img" src="/static/images/videoDomeHeader.png" alt="" />
+      <img id="vd-img" src="/images/videoDomeHeader.png" alt="" />
       <div className="dennis-picks">
         <div className="owner-profile">
-          <img className="owner-pic" src="/static/images/dennis.png" alt="" />
+          <img className="owner-pic" src="/images/dennis.png" alt="" />
           <br />
           <span>Dennis Lerpiss</span>
           <br />

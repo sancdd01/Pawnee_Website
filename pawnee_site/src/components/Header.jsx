@@ -24,7 +24,7 @@ export default function Header() {
         <Navbar id="fix-nav" collapseOnSelect bg="dark" expand="lg">
           <Navbar.Brand href="#home">
             <img
-              src="/static/images/city_seal.png"
+              src="/images/city_seal.png"
               width="80"
               height="80"
               className="d-inline-block align-top"

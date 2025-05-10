@@ -7,7 +7,7 @@ export default function Home() {
       <div className="hp-1">
         <div class=" hp-image">
           {/* "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDVEeo_o5UeksILbHPWbRxKncolqqkRGSkWXLziaVeqw&usqp=CAU&ec=48600112" */}
-          <img src="/static/images/cityscape.png" alt="" />
+          <img src="/images/cityscape.png" alt="" />
         </div>
         <div id="hp-side">
           <h3>Community Events</h3>
@@ -15,7 +15,7 @@ export default function Home() {
             <div className="side-img-div">
               <img
                 className="side-img"
-                src="/static/images/eagleton.png"
+                src="/images/eagleton.png"
                 alt=""
               />
             </div>
@@ -24,7 +24,7 @@ export default function Home() {
           <hr />
           <div className="side-block">
             <div className="side-img-div">
-              <img className="side-img" src="/static/images/jjs.png" alt="" />
+              <img className="side-img" src="/images/jjs.png" alt="" />
             </div>
             <div className="side-text">Support JJ's Diner!</div>
           </div>
@@ -34,7 +34,7 @@ export default function Home() {
               <a href="#/videodome">
                 <img
                   className="side-img"
-                  src="/static/images/videodome.png"
+                  src="/images/videodome.png"
                   alt=""
                 />
               </a>
@@ -61,7 +61,7 @@ export default function Home() {
             <div className="side-img-div">
               <img
                 className="side-img"
-                src="/static/images/underConstruction.png"
+                src="/images/underConstruction.png"
                 alt=""
               />
             </div>
@@ -74,7 +74,7 @@ export default function Home() {
           <div className="news-img-div">
             <img
               className="news-images"
-              src="/static/images/h2flow2.png"
+              src="/images/h2flow2.png"
               alt="h2flo"
             />
           </div>
@@ -87,7 +87,7 @@ export default function Home() {
           <div className="news-img-div">
             <img
               className="news-images"
-              src="/static/images/harvestFest.png"
+              src="/images/harvestFest.png"
               alt=""
             />
           </div>
@@ -101,7 +101,7 @@ export default function Home() {
           <div className="news-img-div">
             <img
               className="news-images"
-              src="/static/images/lot48.png"
+              src="/images/lot48.png"
               alt=""
             />
           </div>
@@ -114,7 +114,7 @@ export default function Home() {
           <div className="news-img-div">
             <img
               className="news-images"
-              src="/static/images/dexhart.png"
+              src="/images/dexhart.png"
               alt=""
             />
           </div>

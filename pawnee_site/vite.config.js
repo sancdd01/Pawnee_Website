@@ -3,9 +3,9 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/static/",
+  base: "./",
   build: {
-    outDir: "../PAWNEE/static/",
+    outDir: "dist",
     emptyOutDir: true,
     sourcemap: true,
   },
