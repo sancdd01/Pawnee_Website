@@ -1,15 +1,14 @@
-altgraph @ file:///AppleInternal/Library/BuildRoots/626bfa9c-8221-11ef-b9bf-daac7d5d70b1/Library/Caches/com.apple.xbs/Sources/python3/altgraph-0.17.2-py2.py3-none-any.whl
+altgraph==0.17.2
 asgiref==3.8.1
 dj-database-url==2.3.0
 Django==4.2.21
 django-cors-headers==4.7.0
 djangorestframework==3.16.0
-future @ file:///AppleInternal/Library/BuildRoots/626bfa9c-8221-11ef-b9bf-daac7d5d70b1/Library/Caches/com.apple.xbs/Sources/python3/future-0.18.2-py3-none-any.whl
 gunicorn==23.0.0
-macholib @ file:///AppleInternal/Library/BuildRoots/626bfa9c-8221-11ef-b9bf-daac7d5d70b1/Library/Caches/com.apple.xbs/Sources/python3/macholib-1.15.2-py2.py3-none-any.whl
+macholib==1.15.2
 packaging==25.0
 psycopg2-binary==2.9.10
 python-dotenv==1.1.0
-six @ file:///AppleInternal/Library/BuildRoots/626bfa9c-8221-11ef-b9bf-daac7d5d70b1/Library/Caches/com.apple.xbs/Sources/python3/six-1.15.0-py2.py3-none-any.whl
+si==1.15.0
 sqlparse==0.5.3
 typing_extensions==4.13.2
