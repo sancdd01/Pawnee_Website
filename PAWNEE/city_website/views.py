@@ -14,7 +14,7 @@ def setup_server(request): #temp?
     call_command('migrate')
 
     User = get_user_model()
-    if not User.objects.fitler(is_superuser=True).exists():
+    if not User.objects.filter(is_superuser=True).exists():
         User.objects.create_superuser(
             username='admin',
             email=os.getenv("ADMIN_EMAIL", "admin@exmaple.com"),
