@@ -11,10 +11,11 @@ import json
 
 # Create your views here.
 def setup_server(request): #temp? 
-    call_command('migrate')
+    try:
+      call_command('migrate')
 
-    User = get_user_model()
-    if not User.objects.filter(is_superuser=True).exists():
+      User = get_user_model()
+      if not User.objects.filter(is_superuser=True).exists():
         User.objects.create_superuser(
             username='admin',
             email=os.getenv("ADMIN_EMAIL", "admin@exmaple.com"),
@@ -22,7 +23,11 @@ def setup_server(request): #temp?
         )
         return HttpResponse("Migrations complete. Superuser created.")
     
-    return HttpResponse("Migrations complete. Superuser already exists.")
+      return HttpResponse("Migrations complete. Superuser already exists.")
+
+    except Exception as e:
+      print("server setup error", str(e))
+      return HttpResponse(f"Error: {str(e)}", status=500)
 
 
 def send_the_index(request):
