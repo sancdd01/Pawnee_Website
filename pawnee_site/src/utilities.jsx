@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const API = import.meta.env.VITE_API_URL;
+
 export const signUp = async (
   firstName,
   lastName,
@@ -7,7 +9,7 @@ export const signUp = async (
   password,
   department
 ) => {
-  let response = await axios.post("signup", {
+  let response = await axios.post(`${API}/signup`, {
     first_name: firstName,
     last_name: lastName,
     email: email,
@@ -18,7 +20,7 @@ export const signUp = async (
 };
 
 export const logIn = async (email, password) => {
-  let response = await axios.post("signin", {
+  let response = await axios.post(`${API}/signin`, {
     email: email,
     password: password,
   });
@@ -28,13 +30,13 @@ export const logIn = async (email, password) => {
 };
 
 export const currUser = async () => {
-  let response = await axios.get(`${import.meta.env.VITE_API_URL}/curr_user`,);
+  let response = await axios.get(`${API}/curr_user`,);
   console.log(response.data);
   return response.data;
 };
 
 export const logOut = async (setNewUser) => {
-  let response = await axios.post("signout");
+  let response = await axios.post(`${API}/signout`);
   if (response.data.signout) {
     setNewUser(null);
   }
@@ -51,12 +53,12 @@ export const getQuote = async () => {
 };
 
 export const getTasks = async () => {
-  let response = await axios.get("/workorders/");
+  let response = await axios.get(`${API}/workorders/`);
   return response.data.work_orders;
 };
 
 export const createWorkOrder = async (title) => {
-  let response = await axios.post("/workorders/", {
+  let response = await axios.post(`${API}/workorders/`, {
     title: title,
   });
   return response.data.work_orders;
@@ -67,13 +69,12 @@ export const createWorkOrder = async (title) => {
 //   return response.data.work_orders;
 // };
 
-export const deleteWorkOrder = (id) => {
-  axios
-    .delete(`http://127.0.0.1:8000/workorders/?id=${id}`)
-    .then((response) => {
-      console.log(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+export const deleteWorkOrder = async(id) => {
+  try {
+    const response = await axios.delete(`${API}/workorders/?id=${id}`)
+    return response.data.work_orders;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
 };
