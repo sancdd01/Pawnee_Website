@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 from dotenv import load_dotenv
 import os
+import dj_database_url
 
 load_dotenv()
 
@@ -85,10 +86,9 @@ WSGI_APPLICATION = "PAWNEE.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "pawnee",
-    }
+    "default": dj_database_url.config(
+      default=f"postgres://localhost/pawnee"
+    )
 }
 
 
