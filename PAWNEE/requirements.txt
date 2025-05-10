@@ -9,6 +9,6 @@ macholib==1.15.2
 packaging==25.0
 psycopg2-binary==2.9.10
 python-dotenv==1.1.0
-si==1.15.0
+six==1.15.0
 sqlparse==0.5.3
 typing_extensions==4.13.2
