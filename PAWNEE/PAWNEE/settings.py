@@ -142,4 +142,5 @@ AUTH_USER_MODEL = 'city_website.Gov_Employee'
 CORS_ALLOWED_ORIGINS = [
   "https://discoverpawnee.com",
   "hhtps://www.discoverpawnee.com",
+  "https://serene-swan-f2f03d.netlify.app",
 ]
