@@ -1,16 +1,28 @@
+import os
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from rest_framework.decorators import api_view
 from django.contrib.auth import authenticate, login, logout
 from django.core.serializers import serialize
-from django.core.management import call_command 
+from django.core.management import call_command #temp
+from django.contrib.auth import get_user_model # temp
 from .models import *
 import json
 
 # Create your views here.
-def run_migrations(request):
+def setup_server(request): #temp? 
     call_command('migrate')
-    return HttpResponse("Migrations complete")
+
+    User = get_user_model()
+    if not User.objects.fitler(is_superuser=True).exists():
+        User.objects.create_superuser(
+            username='admin',
+            email=os.getenv("ADMIN_EMAIL", "admin@exmaple.com"),
+            password=os.getenv("ADMIN_PASSWORD", "adminpass123"),
+        )
+        return HttpResponse("Migrations complete. Superuser created.")
+    
+    return HttpResponse("Migrations complete. Superuser already exists.")
 
 
 def send_the_index(request):
