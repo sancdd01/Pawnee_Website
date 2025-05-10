@@ -28,7 +28,7 @@ export const logIn = async (email, password) => {
 };
 
 export const currUser = async () => {
-  let response = await axios.get("curruser");
+  let response = await axios.get(`${import.meta.env.VITE_API_URL}/curr_user`,);
   console.log(response.data);
   return response.data;
 };
