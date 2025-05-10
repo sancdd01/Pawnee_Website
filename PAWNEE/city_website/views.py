@@ -3,10 +3,14 @@ from django.http import HttpResponse, JsonResponse
 from rest_framework.decorators import api_view
 from django.contrib.auth import authenticate, login, logout
 from django.core.serializers import serialize
+from django.core.management import call_command 
 from .models import *
 import json
 
 # Create your views here.
+def run_migrations(request):
+    call_command('migrate')
+    return HttpResponse("Migrations complete")
 
 
 def send_the_index(request):
