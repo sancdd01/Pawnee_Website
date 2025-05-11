@@ -37,26 +37,28 @@ def send_the_index(request):
 
 @api_view(["POST"])
 def user_sign_up(request):
-    email = request.data['email']
-    password = request.data['password']
-    first_name = request.data['first_name']
-    last_name = request.data['last_name']
-    department = request.data['department']
-    super_user = False
-    staff = False
-    if 'super' in request.data:
-        super_user = request.data['super']
-    if 'staff' in request.data:
-        staff = request.data['staff']
     try:
-        new_user = Gov_Employee.objects.create_user(username=email, email=email, password=password, first_name=first_name,
-                                                    last_name=last_name, department=department, is_superuser=super_user, is_staff=staff)
-        new_user.save()
-        return JsonResponse({"success": f"{first_name}, your user was created!"})
-    except Exception as e:
-        print(e)
-        return JsonResponse({"success": False})
+      email = request.data['email']
+      password = request.data['password']
+      first_name = request.data['first_name']
+      last_name = request.data['last_name']
+      department = request.data['department']
 
+      user = Gov_Employee(
+          username=email,
+          email=email,
+          first_name=first_name,
+          last_name=last_name,
+          department=department,
+      )
+      user.set_password(password)
+      user.save()
+
+      return JsonResponse({"success", f"{first_name}, your user was created!"})
+    except Exception as e:
+        print("signup error:", e)
+        return JsonResponse({"success": False})
+    
 
 @api_view(["POST"])
 def user_sign_in(request):
