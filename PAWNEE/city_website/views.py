@@ -78,6 +78,7 @@ def user_sign_in(request):
 
 @api_view(["GET"])
 def curr_user(request):
+    print("curre_user endpoint was hit")
     if request.user.is_authenticated:
         user_info = serialize("json", [request.user], fields=[
                               'first_name', 'email'])
