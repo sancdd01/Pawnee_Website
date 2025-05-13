@@ -67,7 +67,7 @@ def user_sign_in(request):
     email = request.data['email']
     password = request.data['password']
     print(request._request)
-    user = authenticate(username=email, password=password)
+    user = authenticate(email=email, password=password)
     if user is not None and user.is_active:
         try:
             login(request._request, user)
