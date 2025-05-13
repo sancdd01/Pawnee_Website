@@ -54,7 +54,9 @@ def user_sign_up(request):
       user.set_password(password)
       user.save()
 
-      return JsonResponse({"success": f"{first_name}, your user was created!"})
+      return JsonResponse({
+          "success": True,
+          "message": f"{first_name}, your user was created!"})
     except Exception as e:
         print("signup error:", e)
         return JsonResponse({"success": False, "error": str(e)})

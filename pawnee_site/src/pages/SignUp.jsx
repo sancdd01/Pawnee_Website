@@ -17,8 +17,8 @@ export default function SignUp() {
           onSubmit = {async (e) => {
             e.preventDefault();
             try {
-              const success = await signUp(firstName, lastName, email, password, department);
-              if (success) {
+              const result = await signUp(firstName, lastName, email, password, department);
+              if (result === true) {
                 alert("Account created");
                 setFirstName("");
                 setLastName("");
