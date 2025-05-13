@@ -19,13 +19,22 @@ export const signUp = async (firstName, lastName, email, password, department) =
 }
 
 export const logIn = async (email, password) => {
-  let response = await axios.post(`${API}/signin`, {
-    email: email,
-    password: password,
-  });
-  console.log(response.data.signin);
-  window.location.reload();
-  return response.data.success;
+  try {
+    const response = await axios.post(`${API}signin`, {
+      email: email,
+      password: password,
+    });
+    if (response.data.signin) {
+      console.log("Login successful");
+      return true;
+    } else {
+      console.log("Login failed");
+      return false;
+    }
+  } catch (error) {
+    console.error("Login error:", error);
+    return false;
+  }
 };
 
 export const currUser = async () => {

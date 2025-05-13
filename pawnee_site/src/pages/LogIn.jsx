@@ -8,12 +8,17 @@ export default function LogIn() {
   return (
     <div className="container">
       <form
-        onSubmit={(e) => [
-          e.preventDefault(),
-          logIn(email, password),
-          setEmail(""),
-          setPassword(""),
-        ]}
+        onSubmit={async (e) => {
+          e.preventDefault();
+          const success = await logIn(email, password);
+          if (success) {
+            alert("Login Successful");
+            setEmail("");
+            setPassword("");
+          } else {
+            alert("Login Failed");
+          }
+        }}
       >
         <h1 className="title">Log In</h1>
         <input
