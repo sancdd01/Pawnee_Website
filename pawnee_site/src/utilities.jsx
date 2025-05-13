@@ -20,7 +20,7 @@ export const signUp = async (firstName, lastName, email, password, department) =
 
 export const logIn = async (email, password) => {
   try {
-    const response = await axios.post(`${API}signin`, {
+    const response = await axios.post(`${API}/signin`, {
       email: email,
       password: password,
     });
