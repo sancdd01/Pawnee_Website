@@ -69,7 +69,10 @@ def user_sign_in(request):
     print(request._request)
     print("AUTH ATTEMPT", email, password)
     print("USER MODEL:", get_user_model().USERNAME_FIELD)
-    user = authenticate(email=email, password=password)
+    user = authenticate(username=email, password=password)
+    print("Authenticating with:", email, password)
+    print("User found:", user)
+
     if user is not None and user.is_active:
         try:
             login(request._request, user)
