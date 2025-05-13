@@ -14,16 +14,25 @@ export default function SignUp() {
     <div>
       <div className="container">
         <form
-          action=""
-          onSubmit={(e) => [
-            e.preventDefault(),
-            signUp(firstName, lastName, email, password, department),
-            setFirstName(""),
-            setLastName(""),
-            setEmail(""),
-            setPassword(""),
-            setDepartment(""),
-          ]}
+          onSubmit = {async (e) => {
+            e.preventDefault();
+            try {
+              const success = await signUp(firstName, lastName, email, password, department);
+              if (success) {
+                alert("Account created");
+                setFirstName("");
+                setLastName("");
+                setEmail("");
+                setPassword("");
+                setDepartment("");
+              } else {
+                alert("Failed to create account.");
+              }
+            } catch (error) {
+              console.error("Signup error", error);
+              alert("Something went wrong. Please try again.");
+            }
+          }}
         >
           <h1 className="title">Sign up</h1>
           <input

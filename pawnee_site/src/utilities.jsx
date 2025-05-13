@@ -2,22 +2,21 @@ import axios from "axios";
 
 const API = import.meta.env.VITE_API_URL;
 
-export const signUp = async (
-  firstName,
-  lastName,
-  email,
-  password,
-  department
-) => {
-  let response = await axios.post(`${API}/signup`, {
-    first_name: firstName,
-    last_name: lastName,
-    email: email,
-    password: password,
-    department: department,
-  });
-  return response.data.success;
-};
+export const signUp = async (firstName, lastName, email, password, department) => {
+  try {
+    const response = await axios.post(`${API}/signup`, {
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      password: password,
+      department: department,
+    });
+    return response.data.success;
+  } catch (error) {
+    console.error("Sign-up failed:", error.response.data || error.message);
+    return false;
+  }
+}
 
 export const logIn = async (email, password) => {
   let response = await axios.post(`${API}/signin`, {
@@ -64,10 +63,6 @@ export const createWorkOrder = async (title) => {
   return response.data.work_orders;
 };
 
-// export const deleteWorkOrder = async (id) => {
-//   let response = await axios.delete(`/workorders/${id}`);
-//   return response.data.work_orders;
-// };
 
 export const deleteWorkOrder = async(id) => {
   try {
