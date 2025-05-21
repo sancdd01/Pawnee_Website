@@ -88,7 +88,7 @@ WSGI_APPLICATION = "PAWNEE.wsgi.application"
 
 DATABASES = {
     "default": dj_database_url.config(
-      default=f"postgres://localhost/pawnee"
+        default=os.environ.get("DATABASE_URL")
     )
 }
 
